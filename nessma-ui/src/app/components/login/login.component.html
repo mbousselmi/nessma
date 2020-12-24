@@ -1,0 +1,42 @@
+<h1 align="center" class="display-4 mb-5">Sign In</h1>
+<div style="width:40%; margin: 25px auto">
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>Email address</label>
+            <input type="text" class="form-control " formControlName="email" placeholder="Enter email"
+                   [ngClass]="{ 'is-invalid': submitted && f.email.errors }" autofocus>
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+              <div *ngIf="f.email.errors.required">
+                Email is required
+              </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" formControlName="password"
+                   placeholder="Password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" >
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">
+              Password is required
+            </div>
+        </div>
+            <!-- <div [hidden]="f.password.valid || f.password.pristine" class="alert alert-danger">
+                Email is required
+            </div> -->
+        </div>
+        <div class="form-group">
+            <div>
+                <input type="checkbox" id="remember_me" name="remember-me">
+                <label for="remember_me" class="inline">Remember me</label>
+                <a class="float-right" routerLink="/register">Sign Up</a>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-lg btn-primary btn-dark btn-block">Sign In</button>
+        </div>
+    </form>
+
+</div>

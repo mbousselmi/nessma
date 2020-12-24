@@ -1,0 +1,68 @@
+<h1 align="center" class="display-4 mb-5">Sign Up</h1>
+<div style="width:40%; margin: 25px auto" >
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label><b>Name</b></label>
+      <input type="text" class="form-control" formControlName="name" placeholder="Your name" required autofocus>
+          <div  *ngIf="f.name.invalid && (f.name.dirty ||f.name.touched)">
+            <div *ngIf="f.name.errors.required">
+                Name is required.
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+      <label><b>Email address</b></label>
+      <input type="email" class="form-control form-control-lg" formControlName="email"  placeholder="Enter email" email required>
+      <div  *ngIf="f.email.invalid && (f.email.dirty ||f.email.touched)">
+          <div *ngIf="f.email.errors.required" >
+              Email is required.
+          </div>
+          <div *ngIf="f.email.errors.email">
+              Invalid Email.
+          </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label><b>Password</b></label>
+      <input type="password" class="form-control" formControlName="password" placeholder="Password" minlength="6" required>
+        <div  *ngIf="f.password.invalid && (f.password.dirty ||f.password.touched)">
+            <div *ngIf="f.password.errors.required">
+                Password is required.
+            </div>
+            <div *ngIf="f.password.errors.minlength">
+                Password must be at least 6 characters long.
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+      <label><b>Phone</b></label>
+      <input type="text" class="form-control" formControlName="phone" placeholder="Phone" required>
+        <div  *ngIf="f.phone.invalid && (f.phone.dirty ||f.phone.touched)">
+          <div *ngIf="f.phone.errors.pattern">
+                Phone number not valid.
+          </div>
+            <div *ngIf="f.phone.errors.required">
+                Phone is required.
+            </div>
+            <div *ngIf="f.phone.errors.maxlength">
+                Phone number must contains 10 numbers.
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+      <label><b>Address</b></label>
+      <input type="text" class="form-control form-control-lg" formControlName="address"  placeholder="Address" required>
+        <div  *ngIf="f.address.invalid && (f.address.dirty ||f.address.touched)">
+            <div *ngIf="f.address.errors.required">
+                Address is required.
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+
+        <button class="btn btn-primary btn-dark btn-block">Register</button>
+        <button class="btn btn-secondary btn-block" type="reset" (click)="onReset()">Cancel</button>
+
+    </div>
+  </form>
+</div>
