@@ -1,0 +1,22 @@
+Started by user [8mha:////4AjiEnKv+oCwRL84t5EjMTtpFm2PvA0XcTEoq5wyL9D0AAAAnB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz+EgYB/dLi1CL93KT80uLi1JzcTADmguECxQAAAA==[0mMalek Bousselmi
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/nessma
+The recommended git tool is: NONE
+No credentials specified
+Cloning the remote Git repository
+Cloning repository https://github.com/mbousselmi/nessma.git
+ > git init /var/jenkins_home/workspace/nessma # timeout=10
+Fetching upstream changes from https://github.com/mbousselmi/nessma.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.11.0'
+ > git fetch --tags --progress -- https://github.com/mbousselmi/nessma.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/mbousselmi/nessma.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+Avoid second fetch
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+Checking out Revision da2ccfdcb13f00d38b44af506ffa3a47e0bc472c (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f da2ccfdcb13f00d38b44af506ffa3a47e0bc472c # timeout=10
+Commit message: "add docker compose file"
+First time build. Skipping changelog.
+Finished: SUCCESS
